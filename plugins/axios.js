@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export default defineNuxtPlugin((NuxtApp) => {
+export default defineNuxtPlugin(() => {
   const baseDomain = 'http://localhost:8000/v1';
 
   const baseURL = `${baseDomain}`;

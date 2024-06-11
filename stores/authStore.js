@@ -19,7 +19,7 @@ export const useAuthStore = defineStore('authStore', {
     async register( email, password, username) {
       console.log("hello")
      const signUp =  await $axios.post('/user/sign-up', {
-         username,
+         userName: username,
         email,
         password
       })
