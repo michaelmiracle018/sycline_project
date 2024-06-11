@@ -1,9 +1,16 @@
-<script lang="ts" setup>
+<script  setup>
+import { reloadNuxtApp } from "nuxt/app";
+
+reloadNuxtApp({
+  path: "/blogs"
+});
+
+
 const elementPerPage = ref(5);
 const pageNumber = ref(1);
 const searchTest = ref("");
 
-const formattedData = computed<any>(() => {
+const formattedData = computed(() => {
   const allPost = {
     path: "",
     title: "no-title available",
@@ -17,6 +24,8 @@ const formattedData = computed<any>(() => {
   };
   return allPost;
 });
+
+console.log(formattedData);
 
 useHead({
   title: "Archive",

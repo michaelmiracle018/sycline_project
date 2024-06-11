@@ -13,7 +13,7 @@
         </p>
       </div>
       <div class="px-6 justify-self-center">
-        <h1>IMAGE HERE</h1>
+        <img src="~/assets/images/blog-img.png" alt="blog" class="w-60 sm:my-0 py-6 ">
       </div>
     </div>
   </div>

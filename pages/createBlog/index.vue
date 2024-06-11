@@ -1,6 +1,6 @@
 <script setup>
 definePageMeta({
-  layout: "custom",
+  layout: "withoutFooter",
 });
 import { QuillEditor } from "@vueup/vue-quill";
 import BlotFormatter from "quill-blot-formatter";
@@ -22,8 +22,9 @@ const toolbar = [
   [{ font: [] }],
   [{ align: [] }],
   ["clean"], // remove formatting button
-  ["link", "image"], // link and image, video
+  //["link", "image"], // link and image, video
 ];
+const title = ref('')
 
 const modules = [
   {
@@ -50,20 +51,53 @@ const modules = [
   },
 ];
 
-const editorContent = ref("<p>Hello World!</p>");
+const editorContent = ref("");
 const contentHTML = ref("");
-
 function showContent() {
   contentHTML.value = editorContent.value;
 }
+// console.log('dkkk', contentHTML.value);
 </script>
 
 <template>
-  <div class="bg-white">
+  <div class="bg-[#F1F2F4] dark:bg-slate-950 pt-10 h-full">
+    <div class="w-full max-w-2xl m-auto space-y-8">    
+<div >
+  <CustomInput
+  type="text"
+  id="title"
+  name="title"
+  label="Title"
+  placeholder="Enter your title"
+  :required="true"
+  v-model="title"
+  :errorMessages="{ required: 'Title is required.' }"
+  />
+</div>
+<div >
+  <CustomInput
+  type="file"
+  id="img"
+  name="img"
+  label="Image"
+  placeholder="select an image"
+  :required="true"
+  v-model="title"
+  :errorMessages="{ required: 'Image is required.' }"
+  />
+</div>
 
-  <div class="w-full max-w-7xl m-auto h-full">
+<div>
+  <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select an option</label>
+  <select id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+    <option selected>Choose a category</option>
+    <option value="Travel">Travel</option>
+    <option value="Technology">Technology</option>
+    <option value="LifeStyle">LifeStyle</option>
+    <option value="Visit">Visit</option>
+  </select>
+</div>
 
-    <h1>This is VueQuill</h1>
     <QuillEditor
     theme="snow"
     :toolbar="toolbar"
@@ -77,6 +111,7 @@ function showContent() {
     <div id="content_container" class="ql-container ql-snow">
       <div id="content" class="ql-editor" v-html="contentHTML"></div>
     </div>
+    <h1>{{contentHTML}}</h1>
   </div>
 </div>
 

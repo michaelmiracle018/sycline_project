@@ -26,7 +26,8 @@ export default defineNuxtConfig({
     strict: true,
   },
   plugins: [
-    '~plugins/storage.plugin',],
+    // '~plugins/storage.plugin',
+  ],
   nitro: {
     prerender: {
       crawlLinks: true,
@@ -54,6 +55,7 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@stefanobartoletti/nuxt-social-share',
     '@pinia/nuxt',
+    "@pinia-plugin-persistedstate/nuxt",
     ],
     content: {
       highlight: {

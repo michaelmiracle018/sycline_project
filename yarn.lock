@@ -1750,7 +1750,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxt/kit@npm:3.11.2, @nuxt/kit@npm:^3.0.0, @nuxt/kit@npm:^3.10.3, @nuxt/kit@npm:^3.11.1, @nuxt/kit@npm:^3.11.2, @nuxt/kit@npm:^3.8.2, @nuxt/kit@npm:^3.9.0":
+"@nuxt/kit@npm:3.11.2, @nuxt/kit@npm:^3.0.0, @nuxt/kit@npm:^3.10.3, @nuxt/kit@npm:^3.11.1, @nuxt/kit@npm:^3.11.2, @nuxt/kit@npm:^3.5.0, @nuxt/kit@npm:^3.8.0, @nuxt/kit@npm:^3.8.2, @nuxt/kit@npm:^3.9.0":
   version: 3.11.2
   resolution: "@nuxt/kit@npm:3.11.2"
   dependencies:
@@ -2257,6 +2257,29 @@ __metadata:
     "@parcel/watcher-win32-x64":
       optional: true
   checksum: 4da70551da27e565c726b0bbd5ba5afcb2bca36dfd8619a649f0eaa41f693ddd1d630c36e53bc083895d71a3e28bc4199013e557cd13c7af6ccccab28ceecbff
+  languageName: node
+  linkType: hard
+
+"@pinia-plugin-persistedstate/nuxt@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "@pinia-plugin-persistedstate/nuxt@npm:1.2.0"
+  dependencies:
+    "@nuxt/kit": ^3.8.0
+    defu: ^6.1.2
+    pinia-plugin-persistedstate: ">=3.2.0"
+  peerDependencies:
+    "@pinia/nuxt": ^0.5.0
+  checksum: 717ac4c683b9898de4aa8e7ed4b267439f59f5bc33501d900416ba109b0da730209ec33a13d3695a6d484510e032ce1d79e22b0ffad8f478fffed9274f2d6256
+  languageName: node
+  linkType: hard
+
+"@pinia/nuxt@npm:^0.5.1":
+  version: 0.5.1
+  resolution: "@pinia/nuxt@npm:0.5.1"
+  dependencies:
+    "@nuxt/kit": ^3.5.0
+    pinia: ">=2.1.7"
+  checksum: d9f6aa9f5fa50e811d538931162aa55c193d66324df48c74044b63916c3fa03dd64441b4ef1ce7043d3c3f1009d6cbf2d180ec4990f39d781e0c5c279275c465
   languageName: node
   linkType: hard
 
@@ -5648,7 +5671,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"defu@npm:^6.0.0, defu@npm:^6.1.3, defu@npm:^6.1.4":
+"defu@npm:^6.0.0, defu@npm:^6.1.2, defu@npm:^6.1.3, defu@npm:^6.1.4":
   version: 6.1.4
   resolution: "defu@npm:6.1.4"
   checksum: 40e3af6338f195ac1564f53d1887fa2d0429ac7e8c081204bc4d29191180059d3952b5f4e08fe5df8d59eb873aa26e9c88b56d4fac699673d4a372c93620b229
@@ -10325,6 +10348,8 @@ __metadata:
     "@nuxtjs/fontaine": ^0.4.1
     "@nuxtjs/robots": ^3.0.0
     "@nuxtjs/tailwindcss": ^6.11.4
+    "@pinia-plugin-persistedstate/nuxt": ^1.2.0
+    "@pinia/nuxt": ^0.5.1
     "@stefanobartoletti/nuxt-social-share": ^0.6.1
     "@tailwindcss/forms": ^0.5.7
     "@tailwindcss/typography": ^0.5.10
@@ -10336,7 +10361,6 @@ __metadata:
     nuxt-icon: ^0.6.8
     nuxt-og-image: ^3.0.0-rc.38
     nuxt-simple-sitemap: ^4.2.0
-    pinia: ^2.1.7
     quill-blot-formatter: ^1.0.5
     quill-image-uploader: ^1.3.0
     secure-ls: ^1.2.6
@@ -10344,6 +10368,7 @@ __metadata:
     vue: ^3.4.27
     vue-content-loader: ^2.0.1
     vue-router: ^4.3.2
+    vue3-toastify: ^0.2.1
   languageName: unknown
   linkType: soft
 
@@ -11064,7 +11089,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pinia@npm:^2.1.7":
+"pinia-plugin-persistedstate@npm:>=3.2.0":
+  version: 3.2.1
+  resolution: "pinia-plugin-persistedstate@npm:3.2.1"
+  peerDependencies:
+    pinia: ^2.0.0
+  checksum: c62ba84853f803a7925c905f2ea9fd3b64a8b990165555835c380d9e5595a00d762733864f4926b0d36b34f8d5f2306a0799ba8c10ecd36cc15f657821c83747
+  languageName: node
+  linkType: hard
+
+"pinia@npm:>=2.1.7":
   version: 2.1.7
   resolution: "pinia@npm:2.1.7"
   dependencies:
@@ -14509,6 +14543,18 @@ __metadata:
   peerDependencies:
     vue: ^3.2.0
   checksum: 41e5a4b5e7736f8afd1c77983ce634b6cd3d5c703392a780bce71a9dac980ce6790ecfd0619d2e4dc926672fb9e547f152c48aa2b7e1ad0af52770a1d5c81b65
+  languageName: node
+  linkType: hard
+
+"vue3-toastify@npm:^0.2.1":
+  version: 0.2.1
+  resolution: "vue3-toastify@npm:0.2.1"
+  peerDependencies:
+    vue: ">=3.2.0"
+  peerDependenciesMeta:
+    vue:
+      optional: true
+  checksum: 5bfaa599a8ebb7deea6efb2fae35806854d55aeca379cf17adb4954a49d176157776fd791537766c9eb569da2fb976d7954e24e96f17bcbf8217937f142ca341
   languageName: node
   linkType: hard
 

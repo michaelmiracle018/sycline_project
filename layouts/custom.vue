@@ -1,7 +1,7 @@
 <template>
     <!-- <div class="gd-container font-spacegrotesk"> -->
       <main>
-        <div class="p-9" />
+        <div class="" />
         <slot />
       </main>
      

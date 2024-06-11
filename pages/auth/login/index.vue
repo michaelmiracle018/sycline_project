@@ -1,9 +1,8 @@
 <template>
-  <section class="bg-gray-100">
-    <NuxtLink class="font-medium text-blue-600 text-md" to="/">
-      <div class="d-flex flex-row justify-between gap-4 pl-10 pt-5">
+  <section class="bg-gray-100 h-full">
+    <NuxtLink to="/" class="font-medium text-blue-600 text-md ml-10" >
+
         Back home
-      </div>
     </NuxtLink>
     <div
       class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0"
@@ -19,7 +18,7 @@
       >
         <form class="space-y-6" action="#">
           <h5 class="text-xl font-medium text-gray-900 dark:text-white">
-            Sign in to our platform
+            Login to view blogs
           </h5>
 
           <CustomInput
@@ -43,6 +42,7 @@
             v-model="username"
             :errorMessages="{ required: 'Password is required.' }"
           />
+        
           <div class="flex items-center justify-between">
             <div class="flex items-start">
               <div class="flex items-center h-5">
@@ -60,7 +60,7 @@
             </div>
           </div>
           <button
-            class="h-10 w-20 text-white rounded-lg bg-blue-500 hover:bg-blue-600 w-full"
+            class="h-10 text-white rounded-lg bg-blue-500 hover:bg-blue-600 w-full"
           >
             Login
           </button>
@@ -71,12 +71,6 @@
               to="/auth/signUp"
               >Sign up</NuxtLink
             >
-            <!-- 
-              <a
-                href="#"
-                class="font-medium text-primary-600 hover:underline dark:text-primary-500"
-                >Sign up</a
-              > -->
           </p>
         </form>
       </div>
@@ -85,6 +79,7 @@
 </template>
 
 <script>
+  const { $authStore } = useNuxtApp()
 definePageMeta({
   layout: "custom",
 });
@@ -94,6 +89,10 @@ const formData = reactive({
   userName: "",
   keepLoggedIn: false,
 });
+
+
+
+
 </script>
 
 <style lang="scss" scoped></style>

@@ -1,37 +1,47 @@
 <script lang="ts" setup>
 const path = useRoute();
 console.log(path.fullPath);
+const homePath = path.fullPath
+
+
 const showDropDown = ref(false);
 const toggleShowDropDown = () => {
-  console.log(showDropDown.value);
   showDropDown.value = !showDropDown.value;
 };
-interface Props {
-  path?: string;
-  title?: string;
-  date?: string;
-  description?: string;
-  image?: string;
-  alt?: string;
-  ogImage?: string;
-  tags?: Array<string>;
-  published?: boolean;
-}
+// const path = ref('/');
+const title = ref('no-title');
+const date = ref('no-date');
+const description = ref('no-description');
+const image = ref('/blogs-img/blog.jpg');
+const ogImage = ref('/');
+const tags = ref([]);
+const published = ref(false);
+const alt = ref('/');
 
-withDefaults(defineProps<Props>(), {
-  path: "/",
-  title: "no-title",
-  date: "no-date",
-  description: "no-description",
-  image: "/blogs-img/blog.jpg",
-  alt: "no-alt",
-  ogImage: "/blogs-img/blog.jpg",
-  tags: () => [],
-  published: false,
-});
+const isModalVisible = ref(false);
+  
+    function toggleModal() {
+      showDropDown.value = false
+      isModalVisible.value = !isModalVisible.value;
+    }
+
 </script>
 
 <template>
+  <div>
+    <Modal :show="isModalVisible" @update:show="isModalVisible = $event">
+      <div class="p-4 md:p-5 text-center">
+        <svg class="mx-auto mb-4 text-gray-400 w-12 h-12 dark:text-gray-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+        </svg>
+        <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Are you sure you want to delete this post?</h3>
+        <button data-modal-hide="popup-modal" type="button" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center">
+            Yes, I'm sure
+        </button>
+        <button data-modal-hide="popup-modal" type="button" class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">No, cancel</button>
+    </div>
+    </Modal>
+
   <article
     class="group z-1 relative border bg-base-100 dark:border-gray-800 m-2 rounded-2xl overflow-hidden shadow-sm text-zinc-700 dark:text-zinc-300"
   >
@@ -47,7 +57,7 @@ withDefaults(defineProps<Props>(), {
 
       <div class="sm:col-span-7 p-5">
         <!-- ! DISPLAY DROPDOWN -->
-        <div class="flex justify-end px-4 pt-0 relative z-10">
+        <div class="flex justify-end px-4 pt-0 relative z-10" :class="[homePath === '/' && 'hidden']">
           <button
             @click="toggleShowDropDown"
             id="dropdownButton"
@@ -115,8 +125,9 @@ withDefaults(defineProps<Props>(), {
                 <a href="#" class="text-sm text-gray-700">Comment</a>
               </li>
              
-              <li
-                class="px-4 py-2 flex flex-row gap-2 items-center hover:bg-gray-100"
+              <button
+              @click="toggleModal"
+                class="px-4 py-2 flex flex-row gap-2 items-center w-full hover:bg-gray-100 cursor-pointer"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -133,8 +144,8 @@ withDefaults(defineProps<Props>(), {
                   />
                 </svg>
 
-                <a href="#" class="text-sm text-red-600">Delete</a>
-              </li>
+                <span class="text-sm text-red-600">Delete</span>
+              </button>
             </ul>
           </div>
         </div>
@@ -170,4 +181,8 @@ withDefaults(defineProps<Props>(), {
       </div>
     </div>
   </article>
+
+
+</div>
+
 </template>

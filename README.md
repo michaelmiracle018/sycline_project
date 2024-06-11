@@ -1,75 +1,47 @@
-# Nuxt 3 Minimal Starter
+# MiracleBlog
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-## Setup
 
-Make sure to install the dependencies:
+
+
+## Demo
+
+<!-- https://blog.nurMiracle.xyz -->
+
+> Hosted on [Vercel](https://vercel.com/): `npm run build`
+
+### Built with
+
+<p align="center">
+    <img width="200" src="./assets/images/logo.png">
+</p>
+
+ Nuxt Blog built with [Nuxt3](https://nuxt.com), [Nuxt-Content2](https://content.nuxtjs.org/blog/announcing-v2/), [Vue3](https://vuejs.org) & [TailwindCss](https://tailwindcss.com/)
+
+
+## Features
+- Sign Up obtain an account
+- Login to view blogs
+- Landing page
+- category from blog post
+- Blog list page with search and pagination
+- Dark and light mode
+
+
+
+## Build Setup
+
+**Requires Node.js 20+**
 
 ```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
+# install dependencies
 yarn install
 
-# bun
-bun install
-```
+# serve in dev mode, with hot reload at localhost:5173
+yarn run dev or yarn dev
 
-## Development Server
+# build for production
+yarn run build
 
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+# serve in production mode
+yarn run  preview

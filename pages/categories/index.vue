@@ -1,4 +1,5 @@
-<script lang="ts" setup>
+<script  setup>
+
 import { makeFirstCharUpper } from "@/utils/helper";
 
 const { data } = await useAsyncData("all-blog-post-for-category", () =>
@@ -8,9 +9,9 @@ const { data } = await useAsyncData("all-blog-post-for-category", () =>
 
 const allTags = new Map();
 
-data.value?.forEach((blog: any) => {
+data.value?.forEach((blog) => {
   const tags = blog.tags || [];
-  tags.forEach((tag: any) => {
+  tags.forEach((tag) => {
     if (allTags.has(tag)) {
       const cnt = allTags.get(tag);
       allTags.set(tag, cnt + 1);

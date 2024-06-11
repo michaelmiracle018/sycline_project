@@ -12,9 +12,6 @@
       <NuxtLink to="/categories" class="hover:underline">
         Categories
       </NuxtLink>
-      <NuxtLink to="/about" class="hover:underline">
-        About Me
-      </NuxtLink>
     </div>
   </template>
   
